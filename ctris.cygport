@@ -1,6 +1,6 @@
 NAME="ctris"
 VERSION=0.42
-RELEASE=1
+RELEASE=2
 CATEGORY="Games"
 SUMMARY="Console mode tetris clone"
 DESCRIPTION="ctris is a tetris clone. It works very fast and efficient, so it
@@ -11,7 +11,7 @@ SRC_URI="http://hackl.dhs.org/data/download/download.php?file=ctris-${VERSION}.t
 src_compile() {
 	lndirs
 	cd ${B}
-	cygmake -j1
+	cygmake -j1 CFLAGS="${CFLAGS}"
 }
 
 src_install() {
