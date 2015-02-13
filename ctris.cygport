@@ -1,0 +1,20 @@
+NAME="ctris"
+VERSION=0.42
+RELEASE=1
+CATEGORY="Games"
+SUMMARY="Console mode tetris clone"
+DESCRIPTION="ctris is a tetris clone. It works very fast and efficient, so it
+should be possible to play it even over a slow remote terminal."
+HOMEPAGE="http://hackl.dhs.org/ctris/"
+SRC_URI="http://hackl.dhs.org/data/download/download.php?file=ctris-${VERSION}.tar.bz2#/ctris-${VERSION}.tar.bz2"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cygmake -j1
+}
+
+src_install() {
+        cd ${B}
+        cyginstall BINDIR=${D}/usr/bin
+}
